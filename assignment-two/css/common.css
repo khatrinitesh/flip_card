@@ -1,0 +1,87 @@
+*{
+	margin:0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+ul,ol{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.clr::after{
+	content:"";
+	display: table;
+	clear: both;
+}
+
+.list_inline li{
+	display: inline-block;
+}
+
+
+img{
+	max-width: 100%;
+	display: block;
+	margin:0 auto;
+}
+/**************************** STYLING ****************************/
+.flip_block{
+	width: 200px;
+	height: 200px;
+	-webkit-perspective: 1000px;
+	-moz-perspective: 1000px;
+	-ms-perspective: 1000px;
+	perspective: 1000px;
+}
+
+.flip_block .flip_inner{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transition: transform .6s ;
+	-o-transition: transform .6s ;
+	transition: transform .6s ;
+}
+
+.flip_block .flip_front,
+.flip_block .flip_back{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.flip_block:hover .flip_inner{
+	-webkit-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+
+.flip_block .flip_back{
+	background-color:red;
+	color:#fff;
+	-webkit-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+
+.flip_block .flip_back .flip_caption{
+	position: absolute;
+	top:50%;
+	left: 50%;
+	width: 100%;
+	text-align: center;
+	-webkit-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
